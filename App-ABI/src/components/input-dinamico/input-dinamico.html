@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+
+  
+
+  <ion-item [ngSwitch]="inputdinamico.controlType">
+      <ion-label *ngSwitchCase="'textbox'">{{inputdinamico.label}}</ion-label>
+    <ion-input *ngSwitchCase="'textbox'" [formControlName]="inputdinamico.key"
+            [id]="inputdinamico.key" [type]="inputdinamico.type"
+            [pattern]="inputdinamico.pattern"></ion-input>
+           
+           
+    <select [id]="inputdinamico.key" *ngSwitchCase="'dropdown'" [formControlName]="inputdinamico.key">
+      <option *ngFor="let opt of inputdinamico.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+
+  </ion-item>
+
+  <div *ngIf="!isValid">{{inputdinamico.label}} is required</div>
+</form>
+
+ <!--[pattern]="inputdinamico.pattern">-->

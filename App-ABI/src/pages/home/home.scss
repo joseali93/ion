@@ -1,0 +1,53 @@
+page-home {
+
+}
+select::-ms-expand {
+    display: none;
+}
+$grey : black;
+$grey-lighter : gray;
+$white : white;
+$primary : green;
+
+
+select {
+    appearance: none;
+    background-image:
+        url(https://dl.dropbox.com/s/6q2p49jczkvy2n1/arrows-bg.svg),
+        linear-gradient($grey-lighter, $grey-lighter),
+        linear-gradient($grey, $grey);
+    background-position:
+        calc(100% - 14px) -34px,
+        100%,
+        calc(100% - 34px) 0;
+    background-size:
+        auto,
+        34px 100%,
+        1px 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 100%;
+    min-width: 8.5rem;
+    transition: border-color 0.1s linear;
+    border: 1px solid $grey;
+    border-radius: 2px;
+    padding: 8px 44px 8px 8px;
+    color: $grey;
+    background-color: $white;
+    font-size: 14px;
+    height: 34px;
+    
+    &:focus {
+        border-color: $primary;
+        box-shadow: none;
+        outline: 0;
+        background-image:
+            url(https://dl.dropbox.com/s/6q2p49jczkvy2n1/arrows-bg.svg),
+            linear-gradient($grey-lighter, $grey-lighter),
+            linear-gradient($primary, $primary);
+        background-position:
+            calc(100% - 14px) 12px,
+            100%,
+            calc(100% - 34px) 0;
+    }
+}
